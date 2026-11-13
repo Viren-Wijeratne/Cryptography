@@ -13,7 +13,7 @@ int main(void) {
 
     //Entropy created by the time and the seed pointer casted to uint64_t and XORed together
     uint64_t seed = (uint64_t)time(NULL) ^ (uint64_t)(uintptr_t)&seed;
-    printf("Seed: %d\n", seed);
+    printf("Seed: %u\n", seed);
 
     uint64_t hash1 = XXH3_64bits_withSeed(key, key_len, seed);
 
